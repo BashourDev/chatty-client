@@ -51,7 +51,7 @@ const Sidebar = ({ children }) => {
   //   const classes = useStyles();
   const onCopyToCB = async () => {
     console.log(me);
-    await navigator.clipboard.write(me);
+    navigator.clipboard = me;
     alert("coppied");
   };
 
