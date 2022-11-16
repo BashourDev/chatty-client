@@ -49,11 +49,7 @@ const Sidebar = ({ children }) => {
     useContext(SocketContext);
   const [idToCall, setIdToCall] = useState("");
   //   const classes = useStyles();
-  const onCopyToCB = async () => {
-    console.log(me);
-    navigator.clipboard = me;
-    alert("coppied");
-  };
+  const onCopyToCB = async () => {};
 
   return (
     <Container className={"w-4/5 md:p-0 md:mx-9 md:w-[600px]"}>
@@ -76,7 +72,6 @@ const Sidebar = ({ children }) => {
                   color="primary"
                   fullWidth
                   startIcon={<Assignment fontSize="large" />}
-                  onClick={onCopyToCB}
                 >
                   Copy Your ID
                 </Button>
