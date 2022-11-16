@@ -50,7 +50,8 @@ const Sidebar = ({ children }) => {
   const [idToCall, setIdToCall] = useState("");
   //   const classes = useStyles();
   const onCopyToCB = async () => {
-    navigator.clipboard.writeText(me);
+    await navigator.clipboard.writeText(me);
+    alert("coppied");
   };
 
   return (
