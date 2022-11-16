@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useState, useRef, useEffect } from "react";
 import { io } from "socket.io-client";
 import Peer from "simple-peer";
@@ -15,7 +17,7 @@ const ContextProvider = ({ children }) => {
   const [call, setCall] = useState({});
   const [me, setMe] = useState("");
 
-  const myVideo = useRef();
+  const myVideo = useRef({ srcObject: null });
   const userVideo = useRef();
   const connectionRef = useRef();
 
@@ -24,8 +26,12 @@ const ContextProvider = ({ children }) => {
       .getUserMedia({ video: true, audio: true })
       .then((currentStream) => {
         setStream(currentStream);
+        console.log(myVideo.current);
 
-        myVideo.current.srcObject = currentStream;
+        setTimeout(() => {
+          console.log("second", myVideo.current);
+          myVideo.current.srcObject = currentStream;
+        }, 3000);
       })
       .catch((error) => console.error(error));
 
