@@ -7,7 +7,7 @@ import Peer from "simple-peer";
 const SocketContext = createContext();
 
 // const socket = io("http://localhost:5000");
-const socket = io("https://chatty-server-omega.vercel.app");
+const socket = io("https://51.20.182.116:5000/");
 
 const ContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);
@@ -23,7 +23,7 @@ const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     navigator.mediaDevices
-      .getUserMedia({ video: true, audio: true })
+      .getUserMedia({ video: false, audio: true })
       .then((currentStream) => {
         setStream(currentStream);
         console.log(myVideo.current);
