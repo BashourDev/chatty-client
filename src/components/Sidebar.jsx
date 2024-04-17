@@ -66,6 +66,7 @@ const Sidebar = ({ children }) => {
                 onChange={(e) => setName(e.target.value)}
                 fullWidth
               />
+              {me}
               <CopyToClipboard text={me} className={"mt-5"}>
                 <Button
                   variant="contained"
